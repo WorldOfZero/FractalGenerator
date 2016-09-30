@@ -10,6 +10,7 @@ public class DetatchAndHinge : MonoBehaviour {
         var parentBody = bundle.Parent.GetComponent<Rigidbody>();
         rigidbody.isKinematic = false;
         hinge.connectedBody = parentBody;
-        hinge.anchor = -bundle.Parent.pivotPosition;// * bundle.Parent.transform.localScale.y;
+        hinge.autoConfigureConnectedAnchor = false;
+        hinge.connectedAnchor = bundle.Parent.pivotPosition;// * bundle.Parent.transform.localScale.y;
     }
 }
