@@ -16,6 +16,8 @@ public enum MaterialTarget
 
 public class MaterialAnimator : MonoBehaviour {
 
+    public string key;
+
     public Material modifiedMaterial;
     public MaterialTarget materialProperty;
 

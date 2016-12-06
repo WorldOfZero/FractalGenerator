@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SinPublisher : MonoBehaviour {
+public class SinPublisher : Publisher
+{
 
     public float zeroValue = 1;
     public float amplitude = 1;
@@ -9,11 +10,11 @@ public class SinPublisher : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        base.Start();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        SendMessage("UpdateMaterial", zeroValue + Mathf.Sin(Time.time * timeScale) * amplitude);
+        PublishChange(zeroValue + Mathf.Sin(Time.time * timeScale) * amplitude);
     }
 }
